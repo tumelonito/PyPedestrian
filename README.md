@@ -7,6 +7,7 @@ The goal of this project is to build a lightweight pedestrian detector that can 
 ## 📂 Repository Structure
 
 * `PyPedestrian.ipynb`: The main Google Colab / Jupyter Notebook containing the entire pipeline (data loading, training, CPU benchmarking, quantization, and inference).
+* `model_demo.py`: A standalone OpenCV script for real-time webcam inference using the quantized model.
 * `requirements.txt`: List of Python dependencies needed to run the notebook locally.
 
 ## 🛠️ Setup and Dependencies
@@ -25,7 +26,18 @@ pip install -r requirements.txt
 
 _Note: If you are on osx64, I highly recommend using a Conda environment to install PyTorch to avoid binary compatibility issues._
 
-## 🚀 How to Run
+## 🎥 Real-time Webcam Demo
+You can test the optimized model in real-time using your computer's webcam!
+
+1. Download my pre-trained quantized model here: [[Google Drive Link]](https://drive.google.com/drive/folders/1rAKfmzjwBJknNB22DI4JjKI2z3jfIUow?usp=sharing).
+2. Place the downloaded file (ensure it is named quant_model.pt) in the root folder of this repository.
+3. Run the inference script:
+```bash
+python model_demo.py
+```
+4. A window will pop up showing the live camera feed with pedestrian detection. Press **'Q'** to exit the video stream.
+
+## 🚀 How to Run Notebook
 
 1. Clone this repository. 
 2. Open PyPedestrian.ipynb in Jupyter Notebook, JupyterLab, or Google Colab.
@@ -44,4 +56,3 @@ _Note: If you want to skip training and just test the inference, you can downloa
 ## 📝 Future Plans
 
 * Add data augmentation to the training pipeline.
-* Create a simple OpenCV script for webcam inference.
